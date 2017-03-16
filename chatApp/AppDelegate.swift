@@ -2,20 +2,24 @@
 //  AppDelegate.swift
 //  chatApp
 //
-//  Created by prateek sharma on 22/02/17.
-//  Copyright © 2017 prateek sharma. All rights reserved.
+//  Created by JeffChiu on 2/22/17.
+//  Copyright © 2017 Jeff Chiu. All rights reserved.
 //
-
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    var chooseUser : Bool?
+    var userListArr : NSMutableArray?
+     var groupName : String?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+         FIRApp.configure()
+        userListArr = NSMutableArray()
         // Override point for customization after application launch.
+        // window?.rootViewController
         return true
     }
 
@@ -42,5 +46,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+func appDelegate () -> AppDelegate
+{
+    return UIApplication.shared.delegate as! AppDelegate
 }
 
